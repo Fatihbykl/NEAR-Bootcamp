@@ -2,7 +2,7 @@ import { storage, Context } from "near-sdk-as"
 
 // return the string 'hello world'
 export function helloWorld(): string {
-  return 'hello Your Name'
+  return 'hello Fatih'
 }
 
 export function helloWorld2(name: string): string {
@@ -10,12 +10,7 @@ export function helloWorld2(name: string): string {
 }
 
 export function helloWorld3(names: Array<string>): string {
-  return names.map<string>(name => 'hello ' + name).join('\n')
-}
-
-export function helloWorld4(): string {
-  const predecessor = Context.predecessor
-  return 'hello ' + predecessor
+  return names.map<string>(name => 'hello ' + name).join(` `);
 }
 
 // read the given key from account (contract) storage
