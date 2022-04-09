@@ -1,4 +1,4 @@
-import { storage, Context } from "near-sdk-as"
+import { storage, Context, context } from "near-sdk-as"
 
 // return the string 'hello world'
 export function helloWorld(): string {
@@ -16,6 +16,16 @@ export function helloWorld3(names: Array<string>): string {
 export function helloWorld4(): string {
   const predecessor = Context.predecessor
   return 'hello ' + predecessor
+}
+
+export function whatsYourName(): string {
+  return `My name is ${Context.contractName}
+          I received a call from ${Context.predecessor}
+          The call was initiated by ${Context.sender}`
+}
+
+export function showMeTheMoney(): string {
+  return `I just received ${Context.attachedDeposit} attached to this call and now my balance is ${Context.accountBalance}`
 }
 
 // read the given key from account (contract) storage
