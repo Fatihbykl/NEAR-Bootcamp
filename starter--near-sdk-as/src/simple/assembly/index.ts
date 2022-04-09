@@ -13,6 +13,11 @@ export function helloWorld3(names: Array<string>): string {
   return names.map<string>(name => 'hello ' + name).join(` `);
 }
 
+export function helloWorld4(): string {
+  const predecessor = Context.predecessor
+  return 'hello ' + predecessor
+}
+
 // read the given key from account (contract) storage
 export function read(key: string): string {
   if (storage.hasKey(key)) {
